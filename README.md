@@ -1,17 +1,22 @@
-## node-infopage
+# node-infopage
 
 I was tired of getting the generic configuration data out by log and inspect. This is a drop in file, working with IIS (issnode) as well.
 
 
-USAGE:
+## USAGE:
 
-Standalone, globally installed:
+### install
+
+	npm i -g node-infopage
+
+
+### Standalone, globally installed:
 
 	$   PORT=4567 node-infopage
 	PS  $ENV:PORT=4567 ; node-infopage
 	\>  set PORT=4567 && node-infopage
 
-IN code
+### IN code
 
 	// require server to start
 
@@ -27,4 +32,5 @@ IN code
 	//... then serve it with your own server
 	ctx.body = html;
 
+## NOTE:
 If port is omitted, process.env.PORT is checked, defaulting to 4567
