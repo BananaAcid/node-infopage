@@ -1,0 +1,30 @@
+{
+  "name": "node-infopage",
+  "version": "1.0.0",
+  "description": "shows an info page, somewhat like phpinfo() does",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BananaAcid/node-infopage.git"
+  },
+  "keywords": [
+    "phpinfo",
+    "stats",
+    "request",
+    "process"
+  ],
+  "author": "Nabil Redmann <repo@bananaacid.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BananaAcid/node-infopage/issues"
+  },
+  "homepage": "https://github.com/BananaAcid/node-infopage#readme",
+  "bin": {
+    "node-infopage": "./index.js"
+  }
+
+}
