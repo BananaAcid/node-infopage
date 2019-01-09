@@ -17,23 +17,31 @@ const info = {
 		let head = h(3, 'Server Info', 0);
 
 		let html =
-			//h(2.5, 'HTTP headers:') + 
-			//table(request.headers) + 
-			h(2.5, 'process.env') +
-			table(process.env) +
-			h(2.5, 'global') + 
-			table(global, INSPECTION_MAX_DEPTH) +
-			h(2.5, 'request') +
-			table(request) +
-			h(2.5, 'response') +
-			table(response) +
-			h(2.5, 'process') +
-			table(process) +
-			'';
+			d('margin-left: 300px; max-width: 100%; max-height: 100%; overflow: auto;', 
+				//h(2.5, 'HTTP headers:') + 
+				//table(request.headers) + 
+				h(2.5, 'process.env', 0) +
+				table(process.env) +
+				h(2.5, 'global') + 
+				table(global, INSPECTION_MAX_DEPTH) +
+				h(2.5, 'request') +
+				table(request) +
+				h(2.5, 'response') +
+				table(response) +
+				h(2.5, 'process') +
+				table(process) +
+				''
+			);
+
+		let head_all = 
+			d('position: fixed; top: 0; left: 0; width: 300px; max-height: 100%; overflow: auto; padding: 1em; box-sizing: border-box;', 
+				head +
+				headers() +
+				d('margin-top: 2em', '&copy; BananaAcid')
+			);
 		
 		return '' +
-			head +
-			headers() + 
+			head_all +
 			html;
 	},
 
@@ -92,6 +100,10 @@ function table(obj, _deep) {
 	).join('') + '</table>';
 }
 
+function d(style, str) {
+	return `<div style="${style}">${str}</div>`;
+}
+
 function h(lvl, str, top, _deep) {
 	top = top == undefined ? lvl : top;
 	pos++;
@@ -107,5 +119,5 @@ function headers() {
 function isRequired() {
     const stackLine = (new Error()).stack.split('\n')[2];
     const callerModuleName = /\((.*):\d+:\d+\)$/.exec(stackLine)[1];
-    return require.main.filename === callerModuleName;
+    return !(require.main.filename === callerModuleName);
 };

@@ -2,8 +2,13 @@
 
 I was tired of getting the generic configuration data out by log and inspect. This is a drop in file, working with IIS (issnode) as well.
 
+![screen](https://user-images.githubusercontent.com/1894723/50869927-599dcc00-13b6-11e9-80f6-f5f14dc46bc3.png)
 
 ## USAGE:
+
+### quick use
+	
+	npx node-infopage
 
 ### install
 
