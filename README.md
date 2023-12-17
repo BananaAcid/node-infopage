@@ -31,11 +31,23 @@ I was tired of getting the generic configuration data out by log and inspect. Th
 
 	import {server} from 'nodeinfopage';
 	server(..optionalPort..);
+	
+	// with own server: just get the html
+	
+	let html = require('node-infopage').getInfoHtml(request, response);
 
-	// with own server
-	let html = require('node-infopage').getInfoHtml();
-	//... then serve it with your own server
-	ctx.body = html;
+	// with own server example
+	
+	const app = new (require('http').Server)();
+	app.on('request', (request, response) => {
+	  res.writeHead(200, { 'Content-Type': 'text/plain' });
+	  
+	  let html = require('node-infopage').getInfoHtml(request, response);
+	  
+	  res.send( html );  // or how ever your own server needs the html
+	  res.end('\n');
+	});
+	app.listen(8888);
 
 ## NOTE:
 If port is omitted, process.env.PORT is checked, defaulting to 4567
