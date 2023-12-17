@@ -4,7 +4,7 @@
   "description": "shows an info page, somewhat like phpinfo() does",
   "main": "index.js",
   "bin": {
-    "node-infopage": "index.js"
+    "node-infopage": "./index.js"
   },
   "scripts": {
     "start": "node index.js",
@@ -25,9 +25,6 @@
   "bugs": {
     "url": "https://github.com/BananaAcid/node-infopage/issues"
   },
-  "homepage": "https://github.com/BananaAcid/node-infopage#readme",
-  "bin": {
-    "node-infopage": "./index.js"
-  }
+  "homepage": "https://github.com/BananaAcid/node-infopage#readme"
 
 }
