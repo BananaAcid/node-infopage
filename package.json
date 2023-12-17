@@ -1,6 +1,6 @@
 {
   "name": "node-infopage",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "shows an info page, somewhat like phpinfo() does",
   "main": "index.js",
   "bin": {
